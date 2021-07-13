@@ -15,6 +15,13 @@ namespace senai_czBooks_webApiDB.Interfaces
         List<livros> ListarTodos();
 
         /// <summary>
+        /// Lista todos os livros que um determinado autor escreveu
+        /// </summary>
+        /// <param name="id">ID do usuario que escreveu os livros</param>
+        /// <returns>Uma lista com os livros do usuario</returns>
+        List<livros> ListarMeus(int id);
+
+        /// <summary>
         /// Busca um livro pelo seu ID
         /// </summary>
         /// <param name="id">Id do livro que será buscado</param>

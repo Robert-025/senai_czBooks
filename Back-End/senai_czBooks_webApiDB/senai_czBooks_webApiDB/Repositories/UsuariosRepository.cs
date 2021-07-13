@@ -100,5 +100,17 @@ namespace senai_czBooks_webApiDB.Repositories
             //Retorna a listagem de usuarios
             return ctx.usuarios.ToList();
         }
+
+        /// <summary>
+        /// Valida o usuario
+        /// </summary>
+        /// <param name="email">Email do usuario</param>
+        /// <param name="senha">Senha do usuario</param>
+        /// <returns>O usuario encontrado</returns>
+        public usuarios Login(string email, string senha)
+        {
+            //Retorna o primeiro usuario achado com as informações que coincidem com o que foi passado
+            return ctx.usuarios.FirstOrDefault(u => u.email == email && u.senha == senha);
+        }
     }
 }

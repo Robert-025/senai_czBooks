@@ -39,5 +39,13 @@ namespace senai_czBooks_webApiDB.Interfaces
         /// </summary>
         /// <param name="id">ID do usuário que será deletado</param>
         void Deletar(int id);
+
+        /// <summary>
+        /// Valida o usuario
+        /// </summary>
+        /// <param name="email">Email do usuario</param>
+        /// <param name="senha">Senha do usuario</param>
+        /// <returns>O usuario encontrado</returns>
+        usuarios Login(string email, string senha);
     }
 }

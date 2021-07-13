@@ -1,0 +1,718 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai_czBooks_webApiDB</name>
+    </assembly>
+    <members>
+        <member name="P:senai_czBooks_webApiDB.Controllers.AutoresController._autoresRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface IAutoresRepository
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.AutoresController.Get">
+            <summary>
+            Lista todos os autors
+            </summary>
+            <returns>Um status code 200 - OK com a lista de autores</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.AutoresController.GetById(System.Int32)">
+            <summary>
+            Busca um autor pelo seu ID
+            </summary>
+            <param name="id">Id do autor que será buscado</param>
+            <returns>Um status code 200 - OK com o autor buscado</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.AutoresController.Post(senai_czBooks_webApiDB.Domains.autores)">
+            <summary>
+            Cadastra um novo autor
+            </summary>
+            <param name="novoAutor">Objeto com as informações que serão cadastradas</param>
+            <returns>Um status code 201 - created</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.AutoresController.Put(System.Int32,senai_czBooks_webApiDB.Domains.autores)">
+            <summary>
+            Atualiza um autor passando seu ID na url da requisição
+            </summary>
+            <param name="id">Id do autor que será atualizado</param>
+            <param name="autorAtualizado">Obejto com as novas infoemações</param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.AutoresController.Delete(System.Int32)">
+            <summary>
+            Deleta um autor passando seu Id na url
+            </summary>
+            <param name="id">ID do autor que será deletado</param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
+        <member name="P:senai_czBooks_webApiDB.Controllers.BibliotecasController._bibliotecasRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface IBibliotecasRepository
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.BibliotecasController.Get">
+            <summary>
+            Lista todas as bibliotecas
+            </summary>
+            <returns>Um status code 200 - Ok com a lista de bibliotecas</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.BibliotecasController.GetById(System.Int32)">
+            <summary>
+            Busca uma biblioteca pelo seu ID
+            </summary>
+            <param name="id">ID da biblioteca que será buscada</param>
+            <returns>Um status code 200 - Ok com a biblioteca buscada</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.BibliotecasController.Post(senai_czBooks_webApiDB.Domains.bibliotecas)">
+            <summary>
+            Cadastra uma nova biblioteca
+            </summary>
+            <param name="novaBiblioteca">Obejto com as informações que serão cadastradas</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.BibliotecasController.Put(System.Int32,senai_czBooks_webApiDB.Domains.bibliotecas)">
+            <summary>
+            Atualiza uma biblioteca passando seu ID na url da requisição
+            </summary>
+            <param name="id">ID a</param>
+            <param name="bibliotecaAtualizada"></param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.BibliotecasController.Delete(System.Int32)">
+            <summary>
+            Deleta uma biblioteca
+            </summary>
+            <param name="id">ID da bilioteca que será deletada</param>
+            <returns>Um status code 204 - NoContent </returns>
+        </member>
+        <member name="P:senai_czBooks_webApiDB.Controllers.CategoriasController._categoriasRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface ICategoriasRepository
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.CategoriasController.Get">
+            <summary>
+            Lista todas as categorias 
+            </summary>
+            <returns>Um status code 200 - Ok com a lista de categorias</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.CategoriasController.GetById(System.Int32)">
+            <summary>
+            Busca uma categoria pelo seu ID
+            </summary>
+            <param name="id">ID da categoria que será buscada</param>
+            <returns>Um status code 200 - OK com a categoria buscada</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.CategoriasController.Post(senai_czBooks_webApiDB.Domains.categorias)">
+            <summary>
+            Cadastra uma nova categoria
+            </summary>
+            <param name="novaCategoria">Objeto com as informações que serão cadastradas</param>
+            <returns>Um status code 201 - created</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.CategoriasController.Put(System.Int32,senai_czBooks_webApiDB.Domains.categorias)">
+            <summary>
+            Atualiza uma categoria
+            </summary>
+            <param name="id">ID da categoria que será atualizada</param>
+            <param name="categoriaAtualizada">Objeto com as novas informações que serão cadastradas</param>
+            <returns>Um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.CategoriasController.Delete(System.Int32)">
+            <summary>
+            Deleta uma categoria
+            </summary>
+            <param name="id">ID da categoria que será deletada</param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
+        <member name="P:senai_czBooks_webApiDB.Controllers.LivrosController._livrosRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.LivrosController.#ctor">
+            <summary>
+            Instancia o objeto _livrosRepository para que haja referência aos métodos do repositorio
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.LivrosController.Get">
+            <summary>
+            Lista todos os livros 
+            </summary>
+            <returns>Um status code 200 - OK com a lista de livros</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.LivrosController.GetById(System.Int32)">
+            <summary>
+            Busca um livro pelo seu ID
+            </summary>
+            <param name="id">ID do livro que será buscado</param>
+            <returns>Um status code 200 - OK com o livro buscado</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.LivrosController.GetMy">
+            <summary>
+            Lista todos os livros de um autor
+            </summary>
+            <returns>Um status code 200 - OK com a lista de livros</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.LivrosController.Post(senai_czBooks_webApiDB.Domains.livros)">
+            <summary>
+            Cadastra um novo livro
+            </summary>
+            <param name="novoLivro">Objeto com as informações que serçao cadastradas</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.LivrosController.Put(System.Int32,senai_czBooks_webApiDB.Domains.livros)">
+            <summary>
+            Atualiza um livro passando seu ID na url
+            </summary>
+            <param name="id">ID do livro que será atualizado</param>
+            <param name="livroAtualizado">Objeto com as novas informações</param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.LivrosController.Delete(System.Int32)">
+            <summary>
+            Deleta um livro passando seu ID na url
+            </summary>
+            <param name="id">ID do livro que será deletado</param>
+            <returns>Um status cdoe 204 - NoContent</returns>
+        </member>
+        <member name="P:senai_czBooks_webApiDB.Controllers.LoginController._usuariorepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface IUsuariosRepository
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.LoginController.Post(senai_czBooks_webApiDB.ViewModel.LoginViewModel)">
+            <summary>
+            Realiza o login do usuario
+            </summary>
+            <param name="login">Objeto com as informações de login</param>
+            <returns>Um status code - 200 com o token</returns>
+        </member>
+        <member name="P:senai_czBooks_webApiDB.Controllers.TiposUsuariosController._tiposUsuariosRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface ITiposUsuariosRepository
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.TiposUsuariosController.Get">
+            <summary>
+            Lista todos os tipos de usuarios
+            </summary>
+            <returns>Uma lista com os tipos de usuarios</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.TiposUsuariosController.Post(senai_czBooks_webApiDB.Domains.tiposUsuarios)">
+            <summary>
+            Cadastra um novo tipo de usuario
+            </summary>
+            <param name="novoTipo">Objeto com as informações que serão cadastradas</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.TiposUsuariosController.Put(System.Int32,senai_czBooks_webApiDB.Domains.tiposUsuarios)">
+            <summary>
+            Atualiza um tipo de usuario existente pelo seu ID
+            </summary>
+            <param name="id">ID do tipo de usuario que será atualizado</param>
+            <param name="tipoAtualizado">Objeto com as novas informações </param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.TiposUsuariosController.Delete(System.Int32)">
+            <summary>
+            Deleta um tipo de usuario pelo seu ID
+            </summary>
+            <param name="id">ID do tipo de usuario que será deletado</param>
+            <returns>um status code 204 - NoContent</returns>
+        </member>
+        <member name="T:senai_czBooks_webApiDB.Controllers.UsuariosController">
+            <summary>
+            Controller responsavel pelos endpoints ao Login
+            </summary>
+        </member>
+        <member name="P:senai_czBooks_webApiDB.Controllers.UsuariosController._usuarioRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface IUsuarioRepository
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.UsuariosController.Get">
+            <summary>
+            Lista todos os usuarios 
+            </summary>
+            <returns>Um status code 200 - OK com a lista de usuarios</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.UsuariosController.GetById(System.Int32)">
+            <summary>
+            Busca um usuario pelo seu ID
+            </summary>
+            <param name="id">ID do usuario que será buscado</param>
+            <returns>Um status code 200 - Ok com o usuario buscado</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.UsuariosController.Post(senai_czBooks_webApiDB.Domains.usuarios)">
+            <summary>
+            Cadastra um novo usuario
+            </summary>
+            <param name="novoUsuario">Objeto com as informações que serão cadastradas</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.UsuariosController.Put(System.Int32,senai_czBooks_webApiDB.Domains.usuarios)">
+            <summary>
+            Atualiza um usuario passando seu ID na url
+            </summary>
+            <param name="id">ID do usuario que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto com as novas informações</param>
+            <returns></returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>
+            Deleta um usuario passando seu ID
+            </summary>
+            <param name="id">ID do usuario que será deletado</param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IAutoresRepository.ListarTodos">
+            <summary>
+            Lista todos os autores
+            </summary>
+            <returns>Uma lista com os autores</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IAutoresRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um autor pelo seu ID
+            </summary>
+            <param name="id">ID do autor que será buscado</param>
+            <returns>O autor buscado</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IAutoresRepository.Cadastrar(senai_czBooks_webApiDB.Domains.autores)">
+            <summary>
+            Cadastra um novo autor
+            </summary>
+            <param name="novoAutor">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IAutoresRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.autores)">
+            <summary>
+            Atualiza um autor passando seu ID na url da requisição
+            </summary>
+            <param name="id">ID do autor que será atualizado</param>
+            <param name="autorAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IAutoresRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um autor existente
+            </summary>
+            <param name="id">ID do autor que será deletado</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IBibliotecasRepository.ListarTodas">
+            <summary>
+            Lista todas as bibliotecas
+            </summary>
+            <returns>Uma lista com as bibliotecas</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IBibliotecasRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um biblioteca pelo seu ID
+            </summary>
+            <param name="id">ID da biblioteca que será buscada</param>
+            <returns>A biblioteca buscada</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IBibliotecasRepository.Cadastrar(senai_czBooks_webApiDB.Domains.bibliotecas)">
+            <summary>
+            Cadastra uma nova biblioteca
+            </summary>
+            <param name="novaBiblioteca">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IBibliotecasRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.bibliotecas)">
+            <summary>
+            Atualiza uma biblioteca existente passando seu ID na URL da requisição
+            </summary>
+            <param name="id">ID da biblioteca que será atualizada</param>
+            <param name="bibliotecaAtualizada">Objeto com as nova informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IBibliotecasRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma biblioteca existente
+            </summary>
+            <param name="id">ID da biblioteca que será deletada</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ICategoriasRepository.ListarTodas">
+            <summary>
+            Lista todas as categorias do sistema
+            </summary>
+            <returns>Uma lista com as categorias</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ICategoriasRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma categoria pelo seu ID
+            </summary>
+            <param name="id">ID da categoria que será buscada</param>
+            <returns>A categoria buscada</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ICategoriasRepository.Cadastrar(senai_czBooks_webApiDB.Domains.categorias)">
+            <summary>
+            Cadastra uma nova categoria
+            </summary>
+            <param name="novaCategoria">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ICategoriasRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.categorias)">
+            <summary>
+            Atualiza uma categoria passando seu ID na url da requisição
+            </summary>
+            <param name="id">ID da categoria que será atualizada</param>
+            <param name="categoriaAtualizada">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ICategoriasRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma categoria existente
+            </summary>
+            <param name="id">ID da categoria existente</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ILivrosRepository.ListarTodos">
+            <summary>
+            Lista todos os livros do sistema
+            </summary>
+            <returns>Uma lista de livros</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ILivrosRepository.ListarMeus(System.Int32)">
+            <summary>
+            Lista todos os livros que um determinado autor escreveu
+            </summary>
+            <param name="id">ID do usuario que escreveu os livros</param>
+            <returns>Uma lista com os livros do usuario</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ILivrosRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um livro pelo seu ID
+            </summary>
+            <param name="id">Id do livro que será buscado</param>
+            <returns>O livro buscado</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ILivrosRepository.Cadastrar(senai_czBooks_webApiDB.Domains.livros)">
+            <summary>
+            Cadastra um novo livro
+            </summary>
+            <param name="novoLivro">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ILivrosRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.livros)">
+            <summary>
+            Atualiza um livro passando seu ID na url da requisição
+            </summary>
+            <param name="id">ID do livro que será atualizado</param>
+            <param name="livroAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ILivrosRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será deletado</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ITiposUsuariosRepository.ListarTodos">
+            <summary>
+            Lista todos os tipos de usuarios cadastrados no sistema
+            </summary>
+            <returns>Uma lista com os tipos de usuários</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ITiposUsuariosRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um tipo de usuário pelo seu ID
+            </summary>
+            <param name="id">ID do tipo de usuario que será buscado</param>
+            <returns>O tipo de usuário buscado</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ITiposUsuariosRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um tipo de usuário existente pelo seu ID
+            </summary>
+            <param name="id">ID do tipo de usuário que será deletado</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ITiposUsuariosRepository.Cadastrar(senai_czBooks_webApiDB.Domains.tiposUsuarios)">
+            <summary>
+            Cadastra um novo tipo de usuário
+            </summary>
+            <param name="novoTipo">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.ITiposUsuariosRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.tiposUsuarios)">
+            <summary>
+            Atualiza um tipo de usuário passando seu ID na URL da requisição
+            </summary>
+            <param name="id">ID do tipo de usuário que será atualiza</param>
+            <param name="tipoAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IUsuariosRepository.ListarTodos">
+            <summary>
+            Lista todos os usuários do sistema
+            </summary>
+            <returns>Uma lista de usuários</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IUsuariosRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário pelo seu ID
+            </summary>
+            <param name="id">ID do usuário que será buscado</param>
+            <returns>O usuário buscado</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IUsuariosRepository.Cadastrar(senai_czBooks_webApiDB.Domains.usuarios)">
+            <summary>
+            Cadastra uma novo usuário
+            </summary>
+            <param name="novoUsuario">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IUsuariosRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.usuarios)">
+            <summary>
+            Atualiza um usuário existente passando seu ID na url da requisição
+            </summary>
+            <param name="id">ID do usuário que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IUsuariosRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será deletado</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Interfaces.IUsuariosRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuario
+            </summary>
+            <param name="email">Email do usuario</param>
+            <param name="senha">Senha do usuario</param>
+            <returns>O usuario encontrado</returns>
+        </member>
+        <member name="F:senai_czBooks_webApiDB.Repositories.AutoresRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.AutoresRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.autores)">
+            <summary>
+            Atualiza um autor passando seu ID na url da requisição
+            </summary>
+            <param name="id">ID do autor que será atualizado</param>
+            <param name="autorAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.AutoresRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um autor pelo seu ID
+            </summary>
+            <param name="id">ID do autor que será buscado</param>
+            <returns>O autor buscadi</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.AutoresRepository.Cadastrar(senai_czBooks_webApiDB.Domains.autores)">
+            <summary>
+            Cadastra um novo autor
+            </summary>
+            <param name="novoAutor">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.AutoresRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um autor existente
+            </summary>
+            <param name="id">ID do autor que será deletado</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.AutoresRepository.ListarTodos">
+            <summary>
+            Lista todos os autores
+            </summary>
+            <returns>Uma lista com os autores</returns>
+        </member>
+        <member name="F:senai_czBooks_webApiDB.Repositories.BibliotecasRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.BibliotecasRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.bibliotecas)">
+            <summary>
+            Atualiza uma biblioteca existente passando seu ID na URL da requisição
+            </summary>
+            <param name="id">ID da biblioteca que será atualizada</param>
+            <param name="bibliotecaAtualizada">Objeto com as nova informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.BibliotecasRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um biblioteca pelo seu ID
+            </summary>
+            <param name="id">ID da biblioteca que será buscada</param>
+            <returns>A biblioteca buscada</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.BibliotecasRepository.Cadastrar(senai_czBooks_webApiDB.Domains.bibliotecas)">
+            <summary>
+            Cadastra uma nova biblioteca
+            </summary>
+            <param name="novaBiblioteca">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.BibliotecasRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma biblioteca existente
+            </summary>
+            <param name="id">ID da biblioteca que será deletada</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.BibliotecasRepository.ListarTodas">
+            <summary>
+            Lista todas as bibliotecas
+            </summary>
+            <returns>Uma lista com as bibliotecas</returns>
+        </member>
+        <member name="F:senai_czBooks_webApiDB.Repositories.CategoriasRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.CategoriasRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.categorias)">
+            <summary>
+            Atualiza uma categoria passando seu ID na url da requisição
+            </summary>
+            <param name="id">ID da categoria que será atualizada</param>
+            <param name="categoriaAtualizada">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.CategoriasRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma categoria pelo seu ID
+            </summary>
+            <param name="id">ID da categoria que será buscada</param>
+            <returns>A categoria buscada</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.CategoriasRepository.Cadastrar(senai_czBooks_webApiDB.Domains.categorias)">
+            <summary>
+            Cadastra uma nova categoria
+            </summary>
+            <param name="novaCategoria">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.CategoriasRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma categoria existente
+            </summary>
+            <param name="id">ID da categoria existente</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.CategoriasRepository.ListarTodas">
+            <summary>
+            Lista todas as categorias do sistema
+            </summary>
+            <returns>Uma lista com as categorias</returns>
+        </member>
+        <member name="F:senai_czBooks_webApiDB.Repositories.LivrosRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.LivrosRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.livros)">
+            <summary>
+            Atualiza um livro passando seu ID na url da requisição
+            </summary>
+            <param name="id">ID do livro que será atualizada</param>
+            <param name="livroAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.LivrosRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma livro pelo seu ID
+            </summary>
+            <param name="id">ID do livro que será buscado</param>
+            <returns>O livro buscada</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.LivrosRepository.Cadastrar(senai_czBooks_webApiDB.Domains.livros)">
+            <summary>
+            Cadastra um nov livro
+            </summary>
+            <param name="novoLivro">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.LivrosRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um livro existente
+            </summary>
+            <param name="id">ID do livro existente</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.LivrosRepository.ListarMeus(System.Int32)">
+            <summary>
+            Lista todos os livros que um determinado autor escreveu
+            </summary>
+            <param name="id">ID do usuario que escreveu os livros</param>
+            <returns>Uma lista com os livros do usuario</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.LivrosRepository.ListarTodos">
+            <summary>
+            Lista todas os livros do sistema
+            </summary>
+            <returns>Uma lista com os livros</returns>
+        </member>
+        <member name="F:senai_czBooks_webApiDB.Repositories.TiposUsuariosRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.TiposUsuariosRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.tiposUsuarios)">
+            <summary>
+            Atualiza um tipo de usuário passando seu ID na URL da requisição
+            </summary>
+            <param name="id">ID do tipo de usuário que será atualiza</param>
+            <param name="tipoAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.TiposUsuariosRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um tipo de usuário pelo seu ID
+            </summary>
+            <param name="id">ID do tipo de usuario que será buscado</param>
+            <returns>O tipo de usuário buscado</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.TiposUsuariosRepository.Cadastrar(senai_czBooks_webApiDB.Domains.tiposUsuarios)">
+            <summary>
+            Cadastra um novo tipo de usuário
+            </summary>
+            <param name="novoTipo">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.TiposUsuariosRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um tipo de usuário existente pelo seu ID
+            </summary>
+            <param name="id">ID do tipo de usuário que será deletado</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.TiposUsuariosRepository.ListarTodos">
+            <summary>
+            Lista todos os tipos de usuarios cadastrados no sistema
+            </summary>
+            <returns>Uma lista com os tipos de usuários</returns>
+        </member>
+        <member name="F:senai_czBooks_webApiDB.Repositories.UsuariosRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.UsuariosRepository.Atualizar(System.Int32,senai_czBooks_webApiDB.Domains.usuarios)">
+            <summary>
+            Atualiza um usuário existente passando seu ID na url da requisição
+            </summary>
+            <param name="id">ID do usuário que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.UsuariosRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário pelo seu ID
+            </summary>
+            <param name="id">ID do usuário que será buscado</param>
+            <returns>O usuário buscado</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.UsuariosRepository.Cadastrar(senai_czBooks_webApiDB.Domains.usuarios)">
+            <summary>
+            Cadastra uma novo usuário
+            </summary>
+            <param name="novoUsuario">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.UsuariosRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será deletado</param>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.UsuariosRepository.ListarTodos">
+            <summary>
+            Lista todos os usuários do sistema
+            </summary>
+            <returns>Uma lista de usuários</returns>
+        </member>
+        <member name="M:senai_czBooks_webApiDB.Repositories.UsuariosRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuario
+            </summary>
+            <param name="email">Email do usuario</param>
+            <param name="senha">Senha do usuario</param>
+            <returns>O usuario encontrado</returns>
+        </member>
+        <member name="T:senai_czBooks_webApiDB.ViewModel.LoginViewModel">
+            <summary>
+            Objeto responsável pelo login do usuario
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,4 +1,5 @@
-﻿using senai_czBooks_webApiDB.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using senai_czBooks_webApiDB.Context;
 using senai_czBooks_webApiDB.Domains;
 using senai_czBooks_webApiDB.Interfaces;
 using System;
@@ -107,13 +108,34 @@ namespace senai_czBooks_webApiDB.Repositories
         }
 
         /// <summary>
+        /// Lista todos os livros que um determinado autor escreveu
+        /// </summary>
+        /// <param name="id">ID do usuario que escreveu os livros</param>
+        /// <returns>Uma lista com os livros do usuario</returns>
+        public List<livros> ListarMeus(int id)
+        {
+            //Retorna uma lista com todas as informações das consultas
+            return ctx.livros
+                         //Adiciona na busca as informações da categoria
+                        .Include(l => l.idCategoriaNavigation)
+                        //Adiciona nas informações as informações da biblioteca
+                        .Include(l => l.idBibliotecaNavigation)
+                        //Estabelece como parâmetro de consulta o ID do usuario recebido
+                        .Where(l => l.idAutorNavigation.idUsuario == id)
+                            .ToList();
+        }
+
+        /// <summary>
         /// Lista todas os livros do sistema
         /// </summary>
         /// <returns>Uma lista com os livros</returns>
         public List<livros> ListarTodos()
         {
             //Retorna a tabela de livros
-            return ctx.livros.ToList();
+            return ctx.livros.Include(l => l.idAutorNavigation)
+                             .Include(l => l.idBibliotecaNavigation)
+                             .Include(l => l.idCategoriaNavigation)
+                             .ToList();
         }
     }
 }

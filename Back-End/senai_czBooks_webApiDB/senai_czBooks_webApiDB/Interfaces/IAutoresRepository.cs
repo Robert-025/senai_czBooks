@@ -18,7 +18,7 @@ namespace senai_czBooks_webApiDB.Interfaces
         /// Busca um autor pelo seu ID
         /// </summary>
         /// <param name="id">ID do autor que será buscado</param>
-        /// <returns>O autor buscad<o/returns>
+        /// <returns>O autor buscado</returns>
         autores BuscarPorId(int id);
 
         /// <summary>

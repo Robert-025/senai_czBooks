@@ -71,6 +71,8 @@ namespace senai_czBooks_webApiDB.Repositories
         {
             //Remove da tabela o resultado da busca de categoria pelo ID
             ctx.categoria.Remove(BuscarPorId(id));
+
+            ctx.SaveChanges();
         }
 
         /// <summary>
