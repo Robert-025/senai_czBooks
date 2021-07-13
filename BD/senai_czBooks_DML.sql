@@ -1,7 +1,5 @@
 USE senai_czBooks;
 
-SELECT * FROM livro;
-
 INSERT INTO tiposUsuario(tipo)
 VALUES					('administrador'),
 						('autor'),
